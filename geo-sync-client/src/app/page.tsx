@@ -1,6 +1,8 @@
-import dynamic from "next/dynamic";
+export const dynamic = "force-dynamic";
 
-const MapSync = dynamic(
+import dynamicImport from "next/dynamic";
+
+const MapSync = dynamicImport(
   () => import("@/components/MapSync").then(mod => mod.MapSync),
   { ssr: false }
 );
