@@ -1,8 +1,10 @@
-'use client';
+import dynamic from "next/dynamic";
 
-import { MapSync } from "../components/MapSync";
+const MapSync = dynamic(
+  () => import("@/components/MapSync").then(mod => mod.MapSync),
+  { ssr: false }
+);
 
 export default function Home() {
   return <MapSync />;
 }
-
